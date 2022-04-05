@@ -5,12 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class IndexController {
+public class VetController {
 
-    @GetMapping({ "/", "index","index.html"})
-    public String index(Model model) {
-        model.addAttribute("title", "Pet Clinic Home");
-        return "index";
+    @GetMapping({"/vets", "/vets/index", "/vets/index.html"})
+    public String listVets(Model model) {
+        model.addAttribute("title", "Vets Index Page");
+        return "vets/index";
     }
 }
-
