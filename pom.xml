@@ -23,6 +23,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <!-- Web dependencies -->
+        <webjars-bootstrap.version>5.1.3</webjars-bootstrap.version>
+        <webjars-font-awesome.version>4.7.0</webjars-font-awesome.version>
+
     </properties>
 
     <build>
@@ -38,6 +43,11 @@
                     <goals>install</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>0.0.31</version>
             </plugin>
         </plugins>
     </build>
