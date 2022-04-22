@@ -20,7 +20,7 @@ public class OwnerController {
     public String listOwners(Model model) {
         model.addAttribute("title", "Owners Index Page");
         model.addAttribute("owners", ownerService.findAll());
-        return "owners/index";
+        return "owners/ownersList";
     }
 }
 
