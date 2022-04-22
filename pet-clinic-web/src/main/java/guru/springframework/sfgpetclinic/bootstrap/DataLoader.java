@@ -1,8 +1,11 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.Pet;
+import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.sfgpetclinic.services.PetTypeService;
 import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,11 +16,13 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
     @Autowired // not required, but I like it to be explicit.
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
        this.vetService = vetService;
        this.ownerService = ownerService;
+       this.petTypeService = petTypeService;
     }
 
     @Override
@@ -45,5 +50,15 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets....");
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        petTypeService.save(cat);
+
+        System.out.println("Loaded PetTypes....");
     }
 }
