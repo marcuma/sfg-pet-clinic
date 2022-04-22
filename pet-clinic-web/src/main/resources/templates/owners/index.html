@@ -1,7 +1,7 @@
 <!--/*@thymesVar id="owner" type="guru.springframework.sfgpetclinic.model.Owner"*/-->
 <!--/*@thymesVar id="owners" type="java.util.HashSet"*/-->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
   <meta charset="UTF-8">
   <!--/*@thymesVar id="title" type="java.lang.String"*/-->
@@ -12,12 +12,12 @@
 <!--/*@thymesVar id="owners" type="java.util.HashSet"*/-->
 <h1 th:text="'List of Owners'">Owners List</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
   <tr>
-    <th>Id</th>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th style="width: 150px">Id</th>
+    <th style="width: 200px">First Name</th>
+    <th style="width: 120px">Last Name</th>
   </tr>
   </thead>
   <tbody>
